@@ -3,7 +3,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebas
 import { getAuth, onAuthStateChanged, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 import { getFirestore, collection, addDoc, serverTimestamp, doc, getDoc, setDoc, onSnapshot, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+const firebaseConfig = {
+  apiKey: "AIzaSyApMIePEGH1tDmUuk16Ek3WHFW5ZvzhQ54",
+  authDomain: "aiv-site.firebaseapp.com",
+  projectId: "aiv-site",
+  storageBucket: "aiv-site.firebasestorage.app",
+  messagingSenderId: "50124905975",
+  appId: "1:50124905975:web:cd4fa7210e070fa87c62f2" // Đây là appID của bạn
+};
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
@@ -615,4 +622,5 @@ window.onload = function() {
     document.getElementById('play-again-btn').addEventListener('click', () => {
         switchQuizView('quiz-setup');
     });
+
 };
